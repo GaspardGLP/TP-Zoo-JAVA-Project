@@ -1,8 +1,6 @@
 package bo;
 
-import exceptions.AlreadyDeadException;
-import exceptions.FullZooException;
-import exceptions.EmptyZooException;
+import exceptions.*;
 
 public class Zoo {
     private Manager dir;

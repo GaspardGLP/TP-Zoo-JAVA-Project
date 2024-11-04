@@ -1,6 +1,6 @@
 package bo;
 
-public class Bird extends Animal {
+public class  Bird extends Animal {
     private String color;
 
     public Bird(String name, int age, int ageMax, String shout, String color) {

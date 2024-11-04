@@ -1,9 +1,7 @@
 package go;
 
 import bo.*;
-import exceptions.FullZooException;
-import exceptions.EmptyZooException;
-import exceptions.AlreadyDeadException;
+import exceptions.*;
 
 public class Main {
     public static void main(String[] args) {

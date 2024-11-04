@@ -32,7 +32,7 @@ public class Zoo {
         }
         for (int i = 0; i < nbAnim; i++) {
             if (tabAnim[i].equals(a)) {
-                tabAnim[i] = tabAnim[--nbAnim]; // Swap the last element to the removed position
+                tabAnim[i] = tabAnim[--nbAnim];
                 tabAnim[nbAnim] = null;
                 return true;
             }
@@ -54,7 +54,7 @@ public class Zoo {
             throw new EmptyZooException("The zoo is empty, no animals to age.");
         }
         for (int i = 0; i < nbAnim; i++) {
-            tabAnim[i].getOlder(); // Lève AlreadyDeadException si l'animal est déjà mort
+            tabAnim[i].getOlder();
         }
     }
 

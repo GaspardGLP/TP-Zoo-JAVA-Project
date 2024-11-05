@@ -1,8 +1,10 @@
 package bo;
 
-import exceptions.AlreadyDeadException;
+import exceptions.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Animal {
+public class Animal {
     protected String name;
     protected int age;
     protected int ageMax;
@@ -15,31 +17,14 @@ public abstract class Animal {
         this.shout = shout;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public int getAgeMax() {
-        return ageMax;
+    public void ageOneYear() throws AlreadyDeadException {
+        if (age >= ageMax) {
+            throw new AlreadyDeadException("L'animal " + name + " est mort car il a dépassé son âge maximum.");
+        }
+        age++;
     }
 
     public String getName() {
         return name;
-    }
-
-    public String getShout() {
-        return shout;
-    }
-
-    public String eat() {
-        return name + " is eating.";
-    }
-
-    public boolean getOlder() throws AlreadyDeadException {
-        if (age >= ageMax) {
-            throw new AlreadyDeadException(name + " has already reached the maximum age and is dead.");
-        }
-        age++;
-        return true;
     }
 }

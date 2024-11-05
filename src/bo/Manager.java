@@ -1,5 +1,9 @@
 package bo;
 
+import exceptions.*;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Manager {
     private String name;
     private int ySeniority;

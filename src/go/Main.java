@@ -2,26 +2,31 @@ package go;
 
 import bo.*;
 import exceptions.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        Manager manager = new Manager("John", 5);
+        Zoo zoo = new Zoo(manager, 3);
+
         try {
-            Manager manager = new Manager("John", 10);
-            Zoo zoo = new Zoo(manager, 2);
+            zoo.add(new CatLike("Chat1", 2, 15, "Siamois"));
+            zoo.add(new Bird("Oiseau1", 1, 5, "Bleu"));
+            zoo.add(new Monkey("Singe1", 4, 25));
+            zoo.add(new CatLike("Chat2", 3, 12, "Persan"));
+        } catch (FullZooException e) {
+            System.out.println("Erreur : " + e.getMessage());
+        }
 
-            Animal cat = new CatLike("Tom", 3, 4, "Meow", "Siamese");
-            Animal bird = new Bird("Tweety", 2, 5, "Tweet", "Yellow");
-            Animal monkey = new Monkey("George", 5, 6, "Ooh ooh");
-
-            zoo.add(cat);
-            zoo.add(bird);
-            zoo.add(monkey);
+        try {
             zoo.listZoo();
-            zoo.feedZoo();
             zoo.ageAllAnimals();
-
-        } catch (FullZooException | EmptyZooException | AlreadyDeadException e) {
-            System.err.println(e.getMessage());
+        } catch (EmptyZooException e) {
+            System.out.println("Erreur : " + e.getMessage());
+        } catch (AlreadyDeadException e) {
+            System.out.println("Erreur : Un animal est mort - " + e.getMessage());
         }
     }
 }
+
